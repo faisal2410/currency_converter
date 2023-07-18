@@ -9,9 +9,11 @@ const App=()=> {
   const [converted, setConverted] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
+
+
   useEffect(
-    function () {
-      async function convert() {
+     () =>{
+      const convert=async()=> {
         setIsLoading(true);
         const res = await fetch(
           `https://api.frankfurter.app/latest?amount=${amount}&from=${fromCur}&to=${toCur}`
@@ -26,6 +28,10 @@ const App=()=> {
     },
     [amount, fromCur, toCur]
   );
+
+ 
+  
+ 
 
   return (
     <div>
